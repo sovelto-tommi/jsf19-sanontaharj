@@ -2,6 +2,14 @@
   "name": "sanontaharj",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "url": "https://github.com/sovelto-tommi/jsf19-sanontaharj"
+  },
+  "author": {
+    "name": "Tommi",
+    "email": "tommi.terasvirta@sovelto.fi"
+  },
+  "license": "ECL-2.0",
   "dependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
