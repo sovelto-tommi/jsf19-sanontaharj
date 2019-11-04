@@ -5,8 +5,9 @@ import QuoteBox from './components/QuoteBox'
 function App () {
   return (
     <div className='App'>
-      <h1>Quote-harjoitus</h1>
+      <h1 className="AppTitle">Quote-harjoitus</h1>
       <QuoteBox/>
+      <hr/>
     </div>
   )
 }
