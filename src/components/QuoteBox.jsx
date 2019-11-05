@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import QuoteList from './QuoteList'
 import QuoteForm from './QuoteForm';
 
+let quotearray;
+
 export default class QuoteBox extends Component {
     state = {quotes: quotearray, nextid: 100}
     addQuote = quote => {
@@ -19,7 +21,7 @@ export default class QuoteBox extends Component {
     }
 }
 
-const quotearray =
+quotearray =
     [
         {
         "id": 1,

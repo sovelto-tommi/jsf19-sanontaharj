@@ -34,7 +34,7 @@ export default class QuoteForm extends Component {
               type='text'
               placeholder='Name'
               id='form_author'
-              autocomplete='off'
+              autoComplete='off'
               value={this.state.author}
               onChange={this.handleNameChange}
             />
