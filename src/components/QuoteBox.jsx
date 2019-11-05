@@ -11,11 +11,21 @@ export default class QuoteBox extends Component {
         this.state.quotes.push(quote);
         this.setState({nextid: this.state.nextid+1});
     }
+    deleteQuote = id => {
+        const quotes = this.state.quotes.filter(item=>{
+            return item.id !== id;
+        });
+        this.setState({quotes});
+        // State EI muutu heti
+        // console.log("state.quotes.length", this.state.quotes.length);
+        // filter tekee kopion, eli alkuperäinen taulukko on aina muuttumaton
+        // console.log("quotearray.length", quotearray.length);
+    }
     render() {
         return (
             <div>
                 <QuoteForm addCallback={this.addQuote}/>
-                <QuoteList quotes={this.state.quotes}/>
+                <QuoteList deleteCallback={this.deleteQuote} quotes={this.state.quotes}/>
             </div>
         )
     }

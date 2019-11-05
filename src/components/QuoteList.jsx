@@ -12,7 +12,7 @@ export default class QuoteList extends Component {
             return -1;
       })
   .map((quote)=> {
-            return <Quote quote={quote} key={quote.id}/>
+            return <Quote deleteCallback={this.props.deleteCallback} quote={quote} key={quote.id}/>
         })
         return (
             <div className="QuoteList AppComponent">
