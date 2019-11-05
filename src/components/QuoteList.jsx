@@ -15,7 +15,7 @@ export default class QuoteList extends Component {
             return <Quote quote={quote} key={quote.id}/>
         })
         return (
-            <div className="QuoteList">
+            <div className="QuoteList AppComponent">
                 <h2>QuoteList</h2>
                 {quoteitems}
             </div>

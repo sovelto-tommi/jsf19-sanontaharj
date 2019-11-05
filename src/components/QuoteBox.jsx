@@ -1,11 +1,19 @@
 import React, { Component } from 'react'
 import QuoteList from './QuoteList'
+import QuoteForm from './QuoteForm';
 
 export default class QuoteBox extends Component {
+    state = {quotes: quotearray, nextid: 100}
+    addQuote = quote => {
+        quote.id = this.state.nextid;
+        this.state.quotes.push(quote);
+        this.setState({nextid: this.state.nextid+1});
+    }
     render() {
         return (
             <div>
-                <QuoteList quotes={quotearray}/>
+                <QuoteForm addCallback={this.addQuote}/>
+                <QuoteList quotes={this.state.quotes}/>
             </div>
         )
     }
