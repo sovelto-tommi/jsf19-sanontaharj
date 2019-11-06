@@ -12,13 +12,14 @@ function App () {
     <div className='App'>
       <Router>
         <Navigation/>
-      <h1 className="AppTitle">Quote-harjoitus</h1>
+        <div className="MainContent">
       <Switch>
         <Route path='/' exact component={Index}/>
         <Route path='/quotes' exact component={QuoteList}/>
         <Route path='/form' component={QuoteForm}/>
         <Route component={NotFound}/>
       </Switch>
+      </div>
       </Router>
     </div>
   )
