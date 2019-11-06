@@ -11,6 +11,10 @@ export default class QuoteForm extends Component {
     }
     handleCreateClick = e => {
         e.preventDefault();
+        if (this.state.quotetext.trim() === '') {
+          window.alert("Quote must contain text");
+          return;
+        }
         postQuote(this.state).then(response=> {
           // this.setState({quotetext: '', author: ''});
           this.props.history.push('/quotes');
@@ -42,7 +46,7 @@ export default class QuoteForm extends Component {
               onChange={this.handleNameChange}
             />
           </p>
-          <p>
+          <p className="buttonp">
             <input
               type='submit'
               value='Create'

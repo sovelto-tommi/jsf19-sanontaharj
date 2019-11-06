@@ -24,8 +24,8 @@ export default class QuoteList extends Component {
     render() {
         const quoteitems = this.state.quotes
         .sort(function(q1, q2){
-            const author1last = q1.author.split(" ").slice(-1)[0];
-            const author2last = q2.author.split(" ").slice(-1)[0];
+            const author1last = q1.author.split(" ").slice(-1)[0].toLowerCase();
+            const author2last = q2.author.split(" ").slice(-1)[0].toLowerCase();
             if (author1last === author2last) return 0;
             if (author1last > author2last) return 1;
             return -1;
