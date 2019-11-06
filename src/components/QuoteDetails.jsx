@@ -27,7 +27,7 @@ export default class QuoteDetails extends Component {
             <hr/>
             <h3>History</h3>
             <ul>
-                {history.map((q) => {
+                {history.sort((q1, q2)=>q2.time-q1.time).map((q) => {
                     return <div className="quotehistory" key={q.time}>
                         <p>Time: {new Date(q.time).toISOString()}</p>
                         <p>Quotetext: {q.quotetext}</p>
