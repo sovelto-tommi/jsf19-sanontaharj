@@ -5,11 +5,13 @@ import Index from './components/Index';
 import NotFound from './components/NotFound';
 import QuoteList from './components/QuoteList';
 import QuoteForm from './components/QuoteForm';
+import Navigation from './components/Navigation';
 
 function App () {
   return (
     <div className='App'>
       <Router>
+        <Navigation/>
       <h1 className="AppTitle">Quote-harjoitus</h1>
       <Switch>
         <Route path='/' exact component={Index}/>
