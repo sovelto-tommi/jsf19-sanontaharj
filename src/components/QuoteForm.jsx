@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { postQuote } from '../service/apiclient'
 
 export default class QuoteForm extends Component {
     state = {quotetext: '', author: ''}
@@ -10,8 +11,9 @@ export default class QuoteForm extends Component {
     }
     handleCreateClick = e => {
         e.preventDefault();
-        this.props.addCallback(this.state);
-        this.setState({quotetext: '', author: ''});
+        postQuote(this.state).then(response=> {
+          this.setState({quotetext: '', author: ''});
+        })
     }
   render () {
     return (
