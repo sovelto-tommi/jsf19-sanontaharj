@@ -31,7 +31,7 @@ export default class QuoteList extends Component {
             return -1;
       })
   .map((quote)=> {
-            return <Quote deleteCallback={this.deleteQuote} quote={quote} key={quote.id}/>
+            return <Quote {...this.props} deleteCallback={this.deleteQuote} quote={quote} key={quote.id}/>
         })
         return (
             <div className="QuoteList AppComponent">

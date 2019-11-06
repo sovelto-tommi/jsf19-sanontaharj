@@ -4,6 +4,12 @@ export const fetchAllQuotes = () => {
     return fetch(url)
     .then(resp=>resp.json())
 }
+
+export const fetchSingleQuote = (id) => {
+    return fetch(`${url}/${id}`)
+    .then(response => response.json());
+}
+
 export const postQuote = (quote) => {
     return fetch(url,  {
           method: 'POST',
