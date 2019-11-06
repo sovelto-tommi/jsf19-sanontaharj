@@ -12,7 +12,8 @@ export default class QuoteForm extends Component {
     handleCreateClick = e => {
         e.preventDefault();
         postQuote(this.state).then(response=> {
-          this.setState({quotetext: '', author: ''});
+          // this.setState({quotetext: '', author: ''});
+          this.props.history.push('/quotes');
         })
     }
   render () {
