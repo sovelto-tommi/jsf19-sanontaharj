@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import QuoteList from './QuoteList'
 import QuoteForm from './QuoteForm';
-import {fetchAllQuotes} from '../service/apiclient';
+import {fetchAllQuotes, postQuote, deleteQuoteWithId} from '../service/apiclient';
 
 export default class QuoteBox extends Component {
     state = {quotes: []};
@@ -17,10 +17,17 @@ export default class QuoteBox extends Component {
     }
 
     addQuote = quote => {
-        window.alert("Ei toimi");
+        postQuote(quote).then(vastaus=> {
+            this.fetchQuoteList();
+        })
     }
     deleteQuote = id => {
-        window.alert("Ei toimi");
+        deleteQuoteWithId(id).then(vastaus=> {
+            if (vastaus.status !== 200) {
+                alert("Virhe pyynnössä, status: " + vastaus.status);
+            }
+            this.fetchQuoteList();
+        })
     }
     render() {
         return (
