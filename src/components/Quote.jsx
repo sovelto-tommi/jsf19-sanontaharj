@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Button from 'react-bootstrap/Button'
 import '../Quote.css';
 
 export default class Quote extends Component {
@@ -11,11 +12,13 @@ export default class Quote extends Component {
     render() {
         const {id, author, quotetext} = this.props.quote;
         return (
-            <div className="Quote" onClick={this.showDetails}>
+            <div className="Quote">
                 <span className="quoteid">{id}</span>
                 <p className="quotetext">{quotetext}</p>
                 <p className="author">{author}</p>
-                <p><button type="button" onClick={this.poistaminut}>Delete</button> </p>
+                <p><Button type="button" className="btn" variant="danger" onClick={this.poistaminut}>Delete</Button> 
+                <Button type="button" className="btn" variant="primary" onClick={this.showDetails}>Näytä tiedot</Button>
+                </p>
             </div>
         )
     }
