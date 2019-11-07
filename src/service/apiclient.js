@@ -24,3 +24,15 @@ export const postQuote = (quote) => {
     })
   }
   
+  export const resetQuotes = () => {
+    return fetch('/api/reset',  {
+        method: 'put'
+    })
+  }
+
+  export const deleteAllQuotes = () => {
+    return fetch(url,  {
+        method: 'DELETE'
+    })
+  }
+ 
