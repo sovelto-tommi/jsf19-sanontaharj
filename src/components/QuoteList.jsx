@@ -65,7 +65,7 @@ export default class QuoteList extends Component {
     }
 }
 
-const PaginatePage = ({page, pages, history, location, change}) => {
+export const PaginatePage = ({page, pages, history, location, change}) => {
     const changepage = (page) => {
         history.push(`${location.pathname}?page=${page+1}`)
         change(page);
